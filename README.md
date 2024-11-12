@@ -1,9 +1,13 @@
 🌞 Global Solution – Solar Pride
 
 👥 Criadores
+
 Caio Lucas Silva Gomes - RM: 560077
+
 Guilherme Santos Falcão - RM: 560729
+
 Madjer Henrique Almeida Finamor - RM: 560716
+
 
 📋 Sumário
 
