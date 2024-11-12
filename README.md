@@ -40,4 +40,6 @@ Tecnologia para inclusão: Facilitar a transição energética com ferramentas p
 Benefícios claros: Mostrar como a energia solar gera impacto financeiro e ambiental positivo.
 
 
-![Releases](https://pt-br.imgbb.com/)
+<p align="center">
+  <img src="https://ibb.co/rb6RLQT" alt="Realeases" width="300">
+</p>
