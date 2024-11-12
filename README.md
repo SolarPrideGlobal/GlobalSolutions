@@ -6,8 +6,11 @@ Guilherme Santos Falcão - RM: 560729
 Madjer Henrique Almeida Finamor - RM: 560716
 
 📋 Sumário
+
 Introdução
+
 Objetivos do Projeto
+
 Descrição do Projeto
 
 🌟 1. Introdução
@@ -40,4 +43,4 @@ Tecnologia para inclusão: Facilitar a transição energética com ferramentas p
 Benefícios claros: Mostrar como a energia solar gera impacto financeiro e ambiental positivo.
 
 
-![Releases]([Solar Pride Releases.png](https://github.com/SolarPrideGlobal/GlobalSolutions/blob/main/Solar%20Pride%20Releases.png))
+<img src="https://github.com/SolarPrideGlobal/GlobalSolutions/blob/main/Solar%20Pride%20Releases.png" alt="Releases" width="300">
