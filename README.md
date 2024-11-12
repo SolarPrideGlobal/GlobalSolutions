@@ -41,5 +41,5 @@ Benefícios claros: Mostrar como a energia solar gera impacto financeiro e ambie
 
 
 <p align="center">
-  <img src="https://ibb.co/rb6RLQT" alt="Realeases" width="300">
+  <img src="https://imgur.com/a/oazbzYX" alt="Realeases" width="300">
 </p>
