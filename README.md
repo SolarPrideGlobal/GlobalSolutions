@@ -40,6 +40,4 @@ Tecnologia para inclusão: Facilitar a transição energética com ferramentas p
 Benefícios claros: Mostrar como a energia solar gera impacto financeiro e ambiental positivo.
 
 
-<p align="center">
-  <img src="https://imgur.com/a/oazbzYX" alt="Realeases" width="300">
-</p>
+![Releases](Solar Pride Releases.png)
