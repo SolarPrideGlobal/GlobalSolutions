@@ -4,21 +4,27 @@
 
 Caio Lucas Silva Gomes - RM: 560077
 
-Github : caiolucasxz55
+🐙 Github : caiolucasxz55
 
-LinkedIn :  https://www.linkedin.com/in/caio-lucas-a892b4324/
+🔗 LinkedIn :  https://www.linkedin.com/in/caio-lucas-a892b4324/
+
+---
 
 Guilherme Santos Falcão - RM: 560729
 
-Github : gsfalcao
+🐙 Github : gsfalcao
 
-LinkedIn : https://www.linkedin.com/in/guilherme-santos-falc%C3%A3o-a87012328/
+🔗 LinkedIn : https://www.linkedin.com/in/guilherme-santos-falc%C3%A3o-a87012328/
+
+---
 
 Madjer Henrique Almeida Finamor - RM: 560716
 
-Github : MadjerFin
+🐙 Github : MadjerFin
 
-LinkedIn : https://www.linkedin.com/in/madjer-finamor-51196117b/
+🔗 LinkedIn : https://www.linkedin.com/in/madjer-finamor-51196117b/
+
+---
 
 
 📋 Sumário
