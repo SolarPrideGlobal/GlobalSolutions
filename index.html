@@ -7,8 +7,89 @@
     <title>Solar Pride</title>
 </head>
 <body>
-    <header></header>
-    <main></main>
+    <header>
+        <div>
+            <img src="./images/Solar Pride (1).png" alt="logo solar pride">
+        </div> 
+        <div>
+            <nav>
+                <a href="#">Simulação</a>
+                <a href="#">Dashboard</a>
+                <a href="#">Duvidas</a>
+                <a href="#">Parceiros</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div>
+            <h1>Solar Pride</h1>
+            <h3>Seja o orgulho do meio ambiente</h3>
+            <img src="./images/solar-imagem-3.jpg" alt="paineis solares num ceu azulado">
+        </div>
+        <section class="simulator">
+            <form action="">
+
+                <div>
+                    <label for="consumo">Digite seu consumo mensal em kWh:</label>
+                    <input type="number" id="consumo" name="consumo" required>
+                </div>
+                <div>
+                    <label for="conta">Digite o valor da sua conta de luz</label>
+                    <input type="number" id="conta" name="conta" required>
+                </div>
+                <div>
+                    <label for="email">email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome">
+                </div>
+                <button type="submit" id="simulate-btn">Simulação</button>
+            </form>
+        </section>
+        <section class="economy-return">
+            <div>
+                
+            </div>
+
+        </section>
+        <section class="dashboard-result">
+            <div class="dashboard">
+                <div class="dashboard-item">
+                    <div class="dashboard-icon">
+                        <img src="./Assets/icons8-saco-de-dinheiro-48.png" alt="Saco de dinheiro">
+                    </div>
+                <h3>Economia Total:</h3>
+                <p id="total-savings">R$: 0,00</p>
+                </div>
+
+                <div class="dashboard-item">
+                    <div class="dashboard-icon">
+                        <img src="./Assets/icons8-conflito-48.png" alt="icone de raio de energia">
+                    </div>
+                <h3>Redução de Consumo:</h3>
+                <p id="consumption-reduction">0%</p>
+                </div>
+
+                <div class="dashboard-item">
+                    <div class="dashboard-icon">
+                        <img src="./Assets/icons8-pinheiro-48.png" alt="pinheiro">
+                    </div>
+                <h3>Arvores Equivalentes:</h3>
+                <p id="trees">0</p>
+                </div>
+
+                <div class="dashboard-item">
+                    <div class="dashboard-icon">
+                        <img src="./Assets/icons8-planeta-terra-48.png" alt="planeta terra">
+                    </div>
+                    <h3>CO₂ Evitado:</h3>
+                <p id="co2-saved">0 kg</p>
+                </div>
+            </div>
+        </section>
+    </main>
     <footer></footer>
     
 </body>
