@@ -13,9 +13,9 @@
 
 /* Header Styles */
 header {
-    background: white;
-    padding: 1rem;
+    background: var(--light-blue);
     text-align: center;
+    
 }
 
 .logo {
@@ -39,15 +39,16 @@ header {
     max-width: 500px;
 }
 
-.login-form {
-    background: white;
+.login-form {background-color: var(--light-blue);
     color: black;
     padding: 2rem;
     border-radius: 8px;
-    width: 300px;
+    width: 400px;
+
 }
 
 .login-form input {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.6);
     width: 100%;
     padding: 0.8rem;
     margin: 0.5rem 0;
@@ -56,7 +57,8 @@ header {
 }
 
 .btn-primary {
-    background: var(--accent-yellow);
+    margin-top: 15px;
+    background-color: #ffd700;
     color: var(--primary-blue);
     padding: 0.8rem 2rem;
     border: none;
@@ -83,7 +85,7 @@ header {
     background: white;
     padding: 1rem;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.6);
 }
 .content-wrapper {
     display: flex;
@@ -115,18 +117,21 @@ header {
 }
 
 /* Chat Section */
+
 .chat-section {
     padding: 2rem;
     text-align: center;
 }
 
+
 .chat-input {
     width: 100%;
     max-width: 600px;
     padding: 1rem;
-    margin: 1rem auto;
     border: 1px solid #ddd;
     border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.6);
+    margin-top: 10px;
 }
 
 /* Info Section */
@@ -139,9 +144,30 @@ header {
 }
 
 .info-image {
+    height: 450px;
+    margin-top: 40px; 
     max-width: 100%;
     border-radius: 8px;
 }
+.info-content {
+    margin-top: 50px;
+}
+
+/*aside section */
+.sustainability-message h2 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    background-color: var(--light-blue);
+    margin-left: 30px;
+}
+.sustainability-message p{
+    margin-left: 30px;
+}
+
+
+/*button parceiro */
+
+
 
 /* Footer */
 footer {
@@ -161,7 +187,7 @@ footer {
 
 .escrita {
     margin-left: 400px;
-    margin-right: 400px;
+    margin-right: 390px;
     display: flex;
     justify-content: space-between;
 }
