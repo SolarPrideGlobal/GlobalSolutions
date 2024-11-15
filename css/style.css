@@ -14,7 +14,7 @@ body {
 
 header {
     text-align: center;
-    padding: 20px;
+    background: var(--light-blue);
 }
 
 :root {
@@ -22,12 +22,8 @@ header {
     --accent-yellow: #ffd700;
     --light-blue: #E3F3FA;
 }
-
-/* Header Styles */
-header {
-    background: var(--light-blue);
-    text-align: center;
-    
+header img{
+    height: 100px;
 }
 
 .logo {
@@ -37,7 +33,7 @@ header {
 /* Hero Section */
 .hero {
     position: relative;
-    height: 500px;
+    height: 600px;
     background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
                 url('../images/solar-imagem-3.jpg') center/cover;
     display: flex;
@@ -105,13 +101,25 @@ header {
     flex-wrap: wrap;
 }
 .chart-container {
-    flex: 1;
-    min-width: 400px;
-    padding: 20px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 80%;  
+    max-width: 1200px;  
+    height: 400px;  
+    margin: 30px auto;  
+    padding: 20px;  
+    background: #ffffff;  
+    border-radius: 8px;  
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  
 }
+
+
+@media (max-width: 768px) {
+    .chart-container {
+        height: 400px;  
+        width: 95%;    
+        padding: 10px; 
+    }
+}
+
 /* Stats Section */
 .stats {
     display: grid;
