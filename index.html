@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solar Pride - Energia Solar Sustentável</title>
     <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/script.js"defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js" defer></script>
+    <script src="./js/script.js" defer></script>
 </head>
 <body>
     <header>
-        <img src="./images/Solar Pride (1).png" alt="Solar Pride Logo" class="logo">
+        <img src="./images/Solar_Pride_Logo-removebg-preview.png" alt="Solar Pride Logo" class="logo">
     </header>
 
     <main>
@@ -19,20 +19,20 @@
                 <h1>Solar Pride</h1>
                 <p>Seja o orgulho do meio ambiente</p>
             </div>
-            <form action="">
+            <form action="self" method="POST">
                 <div class="login-form">
                     <h2>Simulador de economia</h2>
-                    <label for="consumo">Digite seu consumo mensal em kWh:</label>
-                    <input type="number" placeholder="Digite seu consumo mensal em kWh">
+                    <label for="consumption">Digite seu consumo mensal em kWh:</label>
+                    <input type="number" id="consumption" name="consumption" placeholder="Consumo mensal kWh" required>
 
-                    <label for="conta">Digite o valor da sua conta de luz</label>
-                    <input type="number" placeholder="Valor da conta de luz">
+                    <label for="conta">Digite o valor da sua conta de luz:</label>
+                    <input type="number" id="conta" name="conta" placeholder="Conta de Luz" required>
 
-                    <label for="conta">Digite o nome:</label>
-                    <input type="text" placeholder="Nome">
+                    <label for="nome">Digite o nome:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Nome" required>
 
-                    <label for="email">email:</label>
-                    <input type="email" placeholder="Email">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
                     <button class="btn-primary">Simulação</button>
                 </div>
             </form>
@@ -46,7 +46,7 @@
                 <div class="chart-container">
                     <canvas id="energyComparison"></canvas>
                 </div>
-            
+            </div>
             <div class="dashboard-grid">
                 <div class="dashboard-item">
                     <h3>Custo do Sistema:</h3>
@@ -62,42 +62,41 @@
                 </div>
                 <div class="dashboard-item">
                     <h3>Retorno em Anos:</h3>
-                    <div class="metric-value" id="returnYears">0 anos</div></div>
+                    <div class="metric-value" id="returnYears">0 anos</div>
+                </div>
             </div>
         </section>
 
         <section class="stats">
-           
-
             <div class="stat-card">
                 <div class="dashboard-icon">
-                    <img src="./Assets/icons8-conflito-48.png" alt="icone de raio de energia">
+                    <img src="./Assets/icons8-conflito-48.png" alt="Ícone de energia">
                 </div>
-            <h3>Eficiencia Energetica:</h3>
-            <p id="consumption-reduction">0%</p>
+                <h3>Eficiência Energética:</h3>
+                <p id="consumption-reduction">0%</p>
             </div>
-
             <div class="stat-card">  
                 <div class="dashboard-icon">
-                <img src="./Assets/icons8-pinheiro-48.png" alt="pinheiro">
+                    <img src="./Assets/icons8-pinheiro-48.png" alt="Pinheiro">
+                </div>
+                <h3>Árvores Equivalentes:</h3>
+                <p id="trees">0</p>
             </div>
-
-            <h3>Arvores Equivalentes:</h3>
-            <p id="trees">0</p>
-            </div>
-
             <div class="stat-card">
                 <div class="dashboard-icon">
-                    <img src="./Assets/icons8-planeta-terra-48.png" alt="planeta terra">
+                    <img src="./Assets/icons8-planeta-terra-48.png" alt="Planeta Terra">
                 </div>
                 <h3>CO₂ Evitado:</h3>
-            <p id="co2-saved">0 kg</p>
+                <p id="co2-saved">0 kg</p>
             </div>
         </section>
 
         <section class="chat-section">
             <h2>Tire suas dúvidas com o assistente virtual Solar Pride</h2>
-            <input type="text" placeholder="Pergunte aqui..." class="chat-input"> 
+            <form action="self" method="POST">
+                <input type="text" placeholder="Pergunte aqui..." class="chat-input" required>
+                <img src="./Assets/icons8-pesquisa-google-na-web-50.png" alt="Ícone de pesquisa">
+            </form>
         </section>
 
         <aside class="sustainability-message">
@@ -106,32 +105,29 @@
         </aside>
 
         <section class="info-section">
-            <img src="./images/casa solar-3.jpg" alt="Casa com painéis solares" class="info-image">
+            <img src="./images/casa_solar-3.jpg" alt="Casa com painéis solares" class="info-image">
             <div class="info-content">
                 <h2>Quer investir em energia solar mas não tem dinheiro?</h2>
-                <p>A energia solar é uma alternativa sustentável que reduz drasticamente a conta de luz, proporcionando economia mensal significativa. Além disso, é uma opção ecológica que contribui para diminuir as emissões de CO₂ e contribuindo para um futuro mais verde.</p>
-                <button class="btn-partners">Parceiros</button>
-                <img class="logo-partners" src="./images/Solar Pride (1).png" alt="logo solarpride">
+                <p>A energia solar é uma alternativa sustentável que reduz drasticamente a conta de luz, proporcionando economia mensal significativa. Além disso, é uma opção ecológica que contribui para diminuir as emissões de CO₂.</p>
+                <button class="btn-partners" onclick="location.href='./paginas/parceiros.html'">Parceiros</button>
             </div>
-
         </section>
-       
     </main>
 
     <footer>
         <p>© 2024 SolarPride - Transformando energia em orgulho sustentável</p>
         <p>Contato: contato@solarpride.com</p>
         <div class="social-links">
-            <img src="./Assets/icons8-linkedin-48.png" alt="linkedin">
-            <img src="./Assets/icons8-github-48.png" alt="github">
-            <img src="./Assets/icons8-instagram-48.png" alt="instagram">
-        </div>
-        <div class="escrita">
-        <a href="#" aria-label="Instagram">LinkedIn</a>
-        <a href="#" aria-label="Github">Github</a>
-        <a href="#" aria-label="LinkedIn">Instagram</a>
+            <a href="#" aria-label="LinkedIn">
+                <img src="./Assets/icons8-linkedin-48.png" alt="LinkedIn">
+            </a>
+            <a href="#" aria-label="Github">
+                <img src="./Assets/icons8-github-48.png" alt="Github">
+            </a>
+            <a href="#" aria-label="Instagram">
+                <img src="./Assets/icons8-instagram-48.png" alt="Instagram">
+            </a>
         </div>
     </footer>
-    
 </body>
 </html>

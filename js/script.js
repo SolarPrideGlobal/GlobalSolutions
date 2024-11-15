@@ -1,4 +1,24 @@
-// Função para calcular a economia financeira
+// Função para calcular métricas ambientais com valores ajustados
+function calcularMetricasAmbientais(consumoMensal) {
+    // Fatores de conversão ajustados:
+    // - Média de emissão do grid brasileiro: 0.475 kg CO2/kWh (fonte: Ministério da Ciência e Tecnologia)
+    // - Uma árvore absorve em média 22 kg de CO2 por ano
+    const KG_CO2_POR_KWH = 0.475;
+    const KG_CO2_POR_ARVORE_ANO = 22;
+    
+    // Cálculo do CO2 evitado anualmente
+    const co2AnualEvitado = (consumoMensal * 12 * KG_CO2_POR_KWH);
+    
+    // Cálculo do número de árvores equivalentes
+    // Multiplicamos por 1.2 para considerar outros benefícios ambientais
+    const arvoresEquivalentes = Math.ceil((co2AnualEvitado * 1.2) / KG_CO2_POR_ARVORE_ANO);
+
+    return {
+        co2Avoided: (co2AnualEvitado / 1000).toFixed(2), // Convertendo para toneladas
+        treesEquivalent: arvoresEquivalentes
+    };
+}
+
 function calcularEconomia(consumoMensal, valorConta) {
     const TAXA_MINIMA = 30;
     const PERDA_EFICIENCIA = 0.20;
@@ -12,6 +32,8 @@ function calcularEconomia(consumoMensal, valorConta) {
     const economiaAnual = economiaMensal * 12;
     const economia25Anos = economiaAnual * VIDA_UTIL;
     const paybackMeses = custoSistema / economiaMensal;
+    
+    const eficienciaEnergetica = ((valorConta - TAXA_MINIMA) / valorConta * 100);
   
     return {
         potenciaSistemaKw: potenciaNecessaria.toFixed(2),
@@ -20,47 +42,67 @@ function calcularEconomia(consumoMensal, valorConta) {
         economiaAnual: economiaAnual.toFixed(2),
         economia25Anos: economia25Anos.toFixed(2),
         paybackMeses: paybackMeses.toFixed(1),
-    };
-}
-  
-// Função para calcular métricas ambientais
-function calcularMetricasAmbientais(consumoMensal) {
-    const VIDA_UTIL = 25;
-    const kwhEconomiaAnual = consumoMensal * 12;
-    const CO2_POR_KWH = 0.084; // em kg CO₂ por kWh
-    const CO2_AVOIDED = (kwhEconomiaAnual * CO2_POR_KWH * VIDA_UTIL) / 1000; // Convertido para toneladas
-    const TREES_EQUIVALENT = Math.floor(CO2_AVOIDED * 7.14); // Cada árvore absorve ~7.14 kg de CO₂ por ano
-  
-    return {
-        co2Avoided: CO2_AVOIDED.toFixed(1),
-        treesEquivalent: TREES_EQUIVALENT,
+        eficienciaEnergetica: eficienciaEnergetica.toFixed(1)
     };
 }
 
-const data = {
-    labels: ['Redução de Consumo', 'Gasto Energia Elétrica', 'Gasto Energia Solar'],
-    datasets: [{
-        data: [75, 850, 350],
-        backgroundColor: [
-            'rgba(46, 204, 113, 0.7)',  // Verde
-            'rgba(231, 76, 60, 0.7)',   // Vermelho
-            'rgba(241, 196, 15, 0.7)'   // Amarelo
-        ],
-        borderColor: [
-            'rgba(46, 204, 113, 1)',
-            'rgba(231, 76, 60, 1)',
-            'rgba(241, 196, 15, 1)'
-        ],
-        borderWidth: 1
-    }]
-};
+// Função para atualizar o gráfico com os novos dados
+function atualizarGrafico(chart, valorConta, economiaMensal) {
+    const gastoEnergiaEletrica = valorConta;
+    const gastoEnergiaSolar = 30; // Taxa mínima
+    const eficienciaEnergetica = ((valorConta - gastoEnergiaSolar) / valorConta * 100);
 
+    const novosDados = {
+        labels: ['Eficiência Energética (%)', 'Gasto Energia Elétrica (R$)', 'Gasto Energia Solar (R$)'],
+        datasets: [{
+            data: [
+                eficienciaEnergetica,
+                gastoEnergiaEletrica,
+                gastoEnergiaSolar
+            ],
+            backgroundColor: [
+                'rgba(46, 204, 113, 0.7)',  // Verde
+                'rgba(231, 76, 60, 0.7)',   // Vermelho
+                'rgba(241, 196, 15, 0.7)'   // Amarelo
+            ],
+            borderColor: [
+                'rgba(46, 204, 113, 1)',
+                'rgba(231, 76, 60, 1)',
+                'rgba(241, 196, 15, 1)'
+            ],
+            borderWidth: 1
+        }]
+    };
+
+    chart.data = novosDados;
+    chart.update();
+}
+
+let chart; // Variável global para o gráfico
+
+// Configuração inicial do gráfico
 const config = {
     type: 'bar',
-    data: data,
+    data: {
+        labels: ['Eficiência Energética (%)', 'Gasto Energia Elétrica (R$)', 'Gasto Energia Solar (R$)'],
+        datasets: [{
+            data: [0, 0, 0],
+            backgroundColor: [
+                'rgba(46, 204, 113, 0.7)',
+                'rgba(231, 76, 60, 0.7)',
+                'rgba(241, 196, 15, 0.7)'
+            ],
+            borderColor: [
+                'rgba(46, 204, 113, 1)',
+                'rgba(231, 76, 60, 1)',
+                'rgba(241, 196, 15, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
     options: {
         responsive: true,
-        maintainAspectRatio: true,
+        maintainAspectRatio: false,
         plugins: {
             legend: {
                 display: false
@@ -83,56 +125,69 @@ const config = {
                         size: 14
                     }
                 }
-            },
-            x: {
-                ticks: {
-                    font: {
-                        size: 12
-                    }
-                }
             }
         }
     }
 };
 
-window.onload = function() {
-    new Chart(
-        document.getElementById('energyComparison'),
-        config
-    );
-};
-
-// Função para exibir resultados na interface
+// Inicialização após o carregamento do DOM
 document.addEventListener('DOMContentLoaded', () => {
+    const canvas = document.getElementById('energyComparison');
+    if (canvas) {
+        chart = new Chart(canvas, config);
+    }
+
     const form = document.querySelector('form');
-    
-    form.addEventListener("submit", (e) => {
-        e.preventDefault(); // Previne o comportamento padrão do formulário
-        
-        const consumoMensal = parseFloat(document.querySelector("input[placeholder='Digite seu consumo mensal em kWh']").value);
-        const valorConta = parseFloat(document.querySelector("input[placeholder='Valor da conta de luz']").value);
-      
-        if (isNaN(consumoMensal) || isNaN(valorConta) || consumoMensal <= 0 || valorConta <= 0) {
-            alert("Por favor, insira valores válidos para o consumo e o valor da conta.");
-            return;
-        }
-      
-        // Calculando resultados financeiros
-        const economia = calcularEconomia(consumoMensal, valorConta);
-      
-        // Calculando métricas ambientais
-        const metricas = calcularMetricasAmbientais(consumoMensal);
-      
-        // Atualizando o Dashboard
-        document.getElementById("systemCost").textContent = `R$ ${economia.custoSistema}`;
-        document.getElementById("monthlyEconomy").textContent = `R$ ${economia.economiaMensal}`;
-        document.getElementById("yearlyEconomy").textContent = `R$ ${economia.economiaAnual}`;
-        document.getElementById("returnYears").textContent = `${(economia.paybackMeses / 12).toFixed(1)} anos`;
-      
-        // Atualizando as estatísticas
-        document.getElementById("total-savings").textContent = `R$ ${economia.economia25Anos}`;
-        document.getElementById("trees").textContent = metricas.treesEquivalent;
-        document.getElementById("consumption-reduction").textContent = `${(consumoMensal * 12 * 25).toFixed(0)} kWh`;
-        document.getElementById("co2-saved").textContent = `${metricas.co2Avoided} toneladas`;
-    });
-});
+    if (form) {
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            
+            const consumoInput = document.querySelector("input[placeholder='Digite seu consumo mensal em kWh']");
+            const valorInput = document.querySelector("input[placeholder='Valor da conta de luz']");
+            
+            if (!consumoInput || !valorInput) {
+                console.error("Inputs não encontrados");
+                return;
+            }
+
+            const consumoMensal = parseFloat(consumoInput.value);
+            const valorConta = parseFloat(valorInput.value);
+          
+            if (isNaN(consumoMensal) || isNaN(valorConta) || consumoMensal <= 0 || valorConta <= 0) {
+                alert("Por favor, insira valores válidos para o consumo e o valor da conta.");
+                return;
+            }
+          
+            // Calculando resultados
+            const economia = calcularEconomia(consumoMensal, valorConta);
+            const metricas = calcularMetricasAmbientais(consumoMensal);
+          
+            // Atualizando o Dashboard
+            const elements = {
+                systemCost: document.getElementById("systemCost"),
+                monthlyEconomy: document.getElementById("monthlyEconomy"),
+                yearlyEconomy: document.getElementById("yearlyEconomy"),
+                returnYears: document.getElementById("returnYears"),
+                totalSavings: document.getElementById("total-savings"),
+                trees: document.getElementById("trees"),
+                consumptionReduction: document.getElementById("consumption-reduction"),
+                co2Saved: document.getElementById("co2-saved")
+            };
+
+            // Atualizar elementos se eles existirem
+            if (elements.systemCost) elements.systemCost.textContent = `R$ ${economia.custoSistema}`;
+            if (elements.monthlyEconomy) elements.monthlyEconomy.textContent = `R$ ${economia.economiaMensal}`;
+            if (elements.yearlyEconomy) elements.yearlyEconomy.textContent = `R$ ${economia.economiaAnual}`;
+            if (elements.returnYears) elements.returnYears.textContent = `${(economia.paybackMeses / 12).toFixed(1)} anos`;
+            if (elements.totalSavings) elements.totalSavings.textContent = `R$ ${economia.economia25Anos}`;
+            if (elements.trees) elements.trees.textContent = metricas.treesEquivalent;
+            if (elements.consumptionReduction) elements.consumptionReduction.textContent = `${economia.eficienciaEnergetica}%`;
+            if (elements.co2Saved) elements.co2Saved.textContent = `${metricas.co2Avoided} toneladas`;
+
+            // Atualizar o gráfico se ele existir
+            if (chart) {
+                atualizarGrafico(chart, valorConta, parseFloat(economia.economiaMensal));
+            }
+        });
+    }
+})
