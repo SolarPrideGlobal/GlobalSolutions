@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <img src="logo.png" alt="Solar Pride Logo" class="logo">
+        <img src="./images/Solar Pride (1).png" alt="Solar Pride Logo" class="logo">
     </header>
 
     <main>
@@ -26,6 +26,9 @@
                     <label for="conta">Digite o valor da sua conta de luz</label>
                     <input type="text" placeholder="Valor da conta de luz">
 
+                    <label for="conta">Digite o nome:</label>
+                    <input type="text" placeholder="Nome">
+
                     <label for="email">email:</label>
                     <input type="email" placeholder="Email">
                     <button class="btn-primary">Simulação</button>
@@ -36,6 +39,7 @@
         <section class="dashboard">
             <h2>Dashboard Solar Pride</h2>
             <p>Veja o quanto economizou!</p>
+            
             <div class="dashboard-grid">
                 <div class="dashboard-item">
                     <h3>Custo do Sistema:</h3>
@@ -95,14 +99,23 @@
             <input type="text" placeholder="Pergunte aqui..." class="chat-input"> 
             <img src="./Assets/icons8-pesquisa-google-na-web-50.png" alt="icone de pesquisa">
         </section>
+        <aside class="sustainability-message">
+            <h2>Seja o orgulho do meio ambiente</h2>
+            <p>A energia solar é uma alternativa sustentável que reduz drasticamente a conta de luz, proporcionando economia mensal significativa. Além disso, é uma solução ambientalmente responsável, diminuindo as emissões de CO₂ e contribuindo para um futuro mais verde. Com o tempo, o investimento se paga, tornando-se uma fonte de energia econômica e renovável para sua casa ou empresa!</p>
+        </aside>
 
         <section class="info-section">
             <img src="./images/casa solar-3.jpg" alt="Casa com painéis solares" class="info-image">
             <div class="info-content">
                 <h2>Quer investir em energia solar mas não tem dinheiro?</h2>
                 <p>A energia solar é uma alternativa sustentável que reduz drasticamente a conta de luz, proporcionando economia mensal significativa. Além disso, é uma opção ecológica que contribui para diminuir as emissões de CO₂ e contribuindo para um futuro mais verde.</p>
+                <button class="btn-partners">Parceiros</button>
+                <img class="logo-partners" src="./images/Solar Pride (1).png" alt="">
+
             </div>
+
         </section>
+       
     </main>
 
     <footer>
@@ -110,9 +123,20 @@
         <p>Contato: contato@solarpride.com</p>
         <div class="social-links">
             <a href="#" aria-label="LinkedIn">LinkedIn</a>
-            <a href="#" aria-label="Facebook">Facebook</a>
+            <img src="./Assets/icons8-linkedin-48.png" alt="">
+            <a href="#" aria-label="Github">Github</a>
+            <img src="./Assets/icons8-github-48.png" alt="">
             <a href="#" aria-label="Instagram">Instagram</a>
+            <img src="./Assets/icons8-instagram-48.png" alt="">
+        </div>
+        <div class="footer-partners">
+            <p>Parceiros:</p>
+            <ul>
+                <li>FIAP</li>
+                <li>IBM</li>
+            </ul>
         </div>
     </footer>
+    <script src="script.js" defer></script>
 </body>
 </html>
