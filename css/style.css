@@ -165,6 +165,13 @@ header {
 .info-content {
     margin-top: 50px;
 }
+.info-content img{
+    margin-left: 100px;
+}
+.info-content button{
+    height: 30px;
+    cursor: pointer;    
+}
 
 /*aside section */
 .sustainability-message h2 {
@@ -177,8 +184,6 @@ header {
     margin-left: 30px;
 }
 
-
-/*button parceiro */
 
 .logo {
     max-width: 200px;
