@@ -152,13 +152,27 @@ footer {
 }
 
 .social-links {
+    margin-left: 400px;
+    margin-right: 400px;
+    display: flex;
+    justify-content: space-between;
     margin-top: 1rem;
 }
 
-.social-links a {
-    color: white;
-    text-decoration: none;
+.escrita {
+    margin-left: 400px;
+    margin-right: 400px;
+    display: flex;
+    justify-content: space-between;
 }
+.escrita a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .escrita a:visited {
+    color: white;
+  }
 
 
 /* Responsive Design */
