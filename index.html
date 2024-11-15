@@ -1,118 +1,118 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Pride - Energia Solar Sustentável</title>
     <link rel="stylesheet" href="./css/style.css">
-    <title>Solar Pride</title>
 </head>
 <body>
     <header>
-        <div>
-            <img src="./images/Solar Pride (1).png" alt="logo solar pride">
-        </div> 
-        <div>
-            <nav>
-                <a href="#">Simulação</a>
-                <a href="#">Dashboard</a>
-                <a href="#">Duvidas</a>
-                <a href="#">Parceiros</a>
-            </nav>
-        </div>
+        <img src="logo.png" alt="Solar Pride Logo" class="logo">
     </header>
-    <main>
-        <div>
-            <h1>Solar Pride</h1>
-            <h3>Seja o orgulho do meio ambiente</h3>
-            <img src="./images/solar-imagem-3.jpg" alt="paineis solares num ceu azulado">
-        </div>
-        <section class="simulator">
-            <form action="">
 
-                <div>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Solar Pride</h1>
+                <p>Seja o orgulho do meio ambiente</p>
+            </div>
+            <form action="">
+                <div class="login-form">
+                    <h2>Simulador de economia</h2>
                     <label for="consumo">Digite seu consumo mensal em kWh:</label>
-                    <input type="number" id="consumo" name="consumo" required>
-                </div>
-                <div>
+                    <input type="text" placeholder="Digite seu consumo mensal em kWh">
+
                     <label for="conta">Digite o valor da sua conta de luz</label>
-                    <input type="number" id="conta" name="conta" required>
-                </div>
-                <div>
+                    <input type="text" placeholder="Valor da conta de luz">
+
                     <label for="email">email:</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" placeholder="Email">
+                    <button class="btn-primary">Simulação</button>
                 </div>
-                <div>
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome">
-                </div>
-                <button type="submit" id="simulate-btn">Simulação</button>
             </form>
         </section>
-        <section class="economy-return">
-            <div class="container-dashboard-return">
-                <h1>Dashboard Solar Pride</h1>
-                
-                <h2>Veja o quanto economizou!</h2>
-                
-                <div class="metric-box">
+
+        <section class="dashboard">
+            <h2>Dashboard Solar Pride</h2>
+            <p>Veja o quanto economizou!</p>
+            <div class="dashboard-grid">
+                <div class="dashboard-item">
                     <h3>Custo do Sistema:</h3>
                     <div class="metric-value" id="systemCost">R$ 0,00</div>
                 </div>
-        
-                <div class="metric-box">
+                <div class="dashboard-item">
                     <h3>Economia Mensal:</h3>
                     <div class="metric-value" id="monthlyEconomy">R$ 0,00</div>
                 </div>
-        
-                <div class="metric-box">
+                <div class="dashboard-item">
                     <h3>Economia Anual:</h3>
                     <div class="metric-value" id="yearlyEconomy">R$ 0,00</div>
                 </div>
-        
-                <div class="metric-box">
+                <div class="dashboard-item">
                     <h3>Retorno em Anos:</h3>
-                    <div class="metric-value" id="returnYears">0 anos</div>
+                    <div class="metric-value" id="returnYears">0 anos</div></div>
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="stat-card">
+                <div class="dashboard-icon">
+                    <img src="./Assets/icons8-saco-de-dinheiro-48.png" alt="Saco de dinheiro">
                 </div>
+            <h3>Economia Total:</h3>
+            <p id="total-savings">R$: 0,00</p>
             </div>
 
+            <div class="stat-card">
+                <div class="dashboard-icon">
+                    <img src="./Assets/icons8-conflito-48.png" alt="icone de raio de energia">
+                </div>
+            <h3>Redução de Consumo:</h3>
+            <p id="consumption-reduction">0%</p>
+            </div>
+
+            <div class="stat-card">  
+                <div class="dashboard-icon">
+                <img src="./Assets/icons8-pinheiro-48.png" alt="pinheiro">
+            </div>
+
+            <h3>Arvores Equivalentes:</h3>
+            <p id="trees">0</p>
+            </div>
+
+            <div class="stat-card">
+                <div class="dashboard-icon">
+                    <img src="./Assets/icons8-planeta-terra-48.png" alt="planeta terra">
+                </div>
+                <h3>CO₂ Evitado:</h3>
+            <p id="co2-saved">0 kg</p>
+            </div>
         </section>
-        <section class="dashboard-result">
-            <div class="dashboard">
-                <div class="dashboard-item">
-                    <div class="dashboard-icon">
-                        <img src="./Assets/icons8-saco-de-dinheiro-48.png" alt="Saco de dinheiro">
-                    </div>
-                <h3>Economia Total:</h3>
-                <p id="total-savings">R$: 0,00</p>
-                </div>
 
-                <div class="dashboard-item">
-                    <div class="dashboard-icon">
-                        <img src="./Assets/icons8-conflito-48.png" alt="icone de raio de energia">
-                    </div>
-                <h3>Redução de Consumo:</h3>
-                <p id="consumption-reduction">0%</p>
-                </div>
+        <section class="chat-section">
+            <h2>Tire suas dúvidas com o assistente virtual Solar Pride</h2>
+            <input type="text" placeholder="Pergunte aqui..." class="chat-input"> 
+            <img src="./Assets/icons8-pesquisa-google-na-web-50.png" alt="icone de pesquisa">
+        </section>
 
-                <div class="dashboard-item">
-                    <div class="dashboard-icon">
-                        <img src="./Assets/icons8-pinheiro-48.png" alt="pinheiro">
-                    </div>
-                <h3>Arvores Equivalentes:</h3>
-                <p id="trees">0</p>
-                </div>
-
-                <div class="dashboard-item">
-                    <div class="dashboard-icon">
-                        <img src="./Assets/icons8-planeta-terra-48.png" alt="planeta terra">
-                    </div>
-                    <h3>CO₂ Evitado:</h3>
-                <p id="co2-saved">0 kg</p>
-                </div>
+        <section class="info-section">
+            <img src="./images/casa solar-3.jpg" alt="Casa com painéis solares" class="info-image">
+            <div class="info-content">
+                <h2>Quer investir em energia solar mas não tem dinheiro?</h2>
+                <p>A energia solar é uma alternativa sustentável que reduz drasticamente a conta de luz, proporcionando economia mensal significativa. Além disso, é uma opção ecológica que contribui para diminuir as emissões de CO₂ e contribuindo para um futuro mais verde.</p>
             </div>
         </section>
     </main>
-    <footer></footer>
-    
+
+    <footer>
+        <p>© 2024 SolarPride - Transformando energia em orgulho sustentável</p>
+        <p>Contato: contato@solarpride.com</p>
+        <div class="social-links">
+            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+            <a href="#" aria-label="Facebook">Facebook</a>
+            <a href="#" aria-label="Instagram">Instagram</a>
+        </div>
+    </footer>
 </body>
 </html>
