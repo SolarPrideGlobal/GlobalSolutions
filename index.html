@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solar Pride - Energia Solar Sustentável</title>
     <link rel="stylesheet" href="./css/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"defer></script>
-    <script src="./js/script.js"defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js" defer></script>
+    <script src="./js/script.js" defer></script>
 </head>
 <body>
     <header>
@@ -19,20 +19,20 @@
                 <h1>Solar Pride</h1>
                 <p>Seja o orgulho do meio ambiente</p>
             </div>
-            <form action="">
+            <form action="self" method="POST">
                 <div class="login-form">
                     <h2>Simulador de economia</h2>
-                    <label for="consumo">Digite seu consumo mensal em kWh:</label>
-                    <input type="number" placeholder="Digite seu consumo mensal em kWh">
+                    <label for="conta">Digite seu consumo mensal em kWh:</label>
+                    <input type="number" id="consumption" name="consumption" placeholder="Consumo mensal kwh" required>
 
-                    <label for="conta">Digite o valor da sua conta de luz</label>
-                    <input type="number" placeholder="Valor da conta de luz">
+                    <label for="conta" name="conta">Digite o valor da sua conta de luz</label>
+                    <input type="number" id="conta" name="conta" placeholder="Conta de Luz" required> placeholder="Conta de Luz" required>
 
-                    <label for="conta">Digite o nome:</label>
-                    <input type="text" placeholder="Nome">
+                    <label for="nome">Digite o nome:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Nome" required>
 
-                    <label for="email">email:</label>
-                    <input type="email" placeholder="Email">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
                     <button class="btn-primary">Simulação</button>
                 </div>
             </form>
@@ -46,7 +46,7 @@
                 <div class="chart-container">
                     <canvas id="energyComparison"></canvas>
                 </div>
-            
+            </div>
             <div class="dashboard-grid">
                 <div class="dashboard-item">
                     <h3>Custo do Sistema:</h3>
@@ -107,7 +107,7 @@
         </aside>
 
         <section class="info-section">
-            <img src="./images/casa solar-3.jpg" alt="Casa com painéis solares" class="info-image">
+            <img src="./images/casa_solar-3.jpg" alt="Casa com painéis solares" class="info-image">
             <div class="info-content">
                 <h2>Quer investir em energia solar mas não tem dinheiro?</h2>
                 <p>A energia solar é uma alternativa sustentável que reduz drasticamente a conta de luz, proporcionando economia mensal significativa. Além disso, é uma opção ecológica que contribui para diminuir as emissões de CO₂ e contribuindo para um futuro mais verde.</p>
