@@ -6,6 +6,7 @@
     <title>Solar Pride - Energia Solar Sustentável</title>
     <link rel="stylesheet" href="./css/style.css">
     <script src="./js/script.js"defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"defer></script>
 </head>
 <body>
     <header>
@@ -40,6 +41,11 @@
         <section class="dashboard">
             <h2>Dashboard Solar Pride</h2>
             <p>Veja o quanto economizou!</p>
+
+            <div class="content-wrapper">
+                <div class="chart-container">
+                    <canvas id="energyComparison"></canvas>
+                </div>
             
             <div class="dashboard-grid">
                 <div class="dashboard-item">
@@ -61,19 +67,13 @@
         </section>
 
         <section class="stats">
-            <div class="stat-card">
-                <div class="dashboard-icon">
-                    <img src="./Assets/icons8-saco-de-dinheiro-48.png" alt="Saco de dinheiro">
-                </div>
-            <h3>Economia Total:</h3>
-            <p id="total-savings">R$: 0,00</p>
-            </div>
+           
 
             <div class="stat-card">
                 <div class="dashboard-icon">
                     <img src="./Assets/icons8-conflito-48.png" alt="icone de raio de energia">
                 </div>
-            <h3>Redução de Consumo:</h3>
+            <h3>Eficiencia Energetica:</h3>
             <p id="consumption-reduction">0%</p>
             </div>
 

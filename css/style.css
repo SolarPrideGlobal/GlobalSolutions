@@ -27,7 +27,7 @@ header {
     position: relative;
     height: 500px;
     background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-                url('/path-to-solar-panels-image.jpg') center/cover;
+                url('../images/solar-imagem-3.jpg') center/cover;
     display: flex;
     justify-content: space-between;
     padding: 2rem;
@@ -84,7 +84,19 @@ header {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
-
+.content-wrapper {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.chart-container {
+    flex: 1;
+    min-width: 400px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
 /* Stats Section */
 .stats {
     display: grid;

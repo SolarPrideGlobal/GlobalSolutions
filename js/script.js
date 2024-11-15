@@ -37,6 +37,71 @@ function calcularMetricasAmbientais(consumoMensal) {
     };
 }
 
+const data = {
+    labels: ['Redução de Consumo', 'Gasto Energia Elétrica', 'Gasto Energia Solar'],
+    datasets: [{
+        data: [75, 850, 350],
+        backgroundColor: [
+            'rgba(46, 204, 113, 0.7)',  // Verde
+            'rgba(231, 76, 60, 0.7)',   // Vermelho
+            'rgba(241, 196, 15, 0.7)'   // Amarelo
+        ],
+        borderColor: [
+            'rgba(46, 204, 113, 1)',
+            'rgba(231, 76, 60, 1)',
+            'rgba(241, 196, 15, 1)'
+        ],
+        borderWidth: 1
+    }]
+};
+
+const config = {
+    type: 'bar',
+    data: data,
+    options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        plugins: {
+            legend: {
+                display: false
+            },
+            title: {
+                display: true,
+                text: 'Comparativo de Consumo e Gastos',
+                font: {
+                    size: 16
+                }
+            }
+        },
+        scales: {
+            y: {
+                beginAtZero: true,
+                title: {
+                    display: true,
+                    text: 'Valor (R$ / %)',
+                    font: {
+                        size: 14
+                    }
+                }
+            },
+            x: {
+                ticks: {
+                    font: {
+                        size: 12
+                    }
+                }
+            }
+        }
+    }
+};
+
+window.onload = function() {
+    new Chart(
+        document.getElementById('energyComparison'),
+        config
+    );
+};
+
 // Função para exibir resultados na interface
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('form');
