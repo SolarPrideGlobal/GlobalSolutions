@@ -6,9 +6,9 @@
 }
 
 :root {
-    --primary-blue: #1e3c72;
+    --primary-blue: #2756A6
     --accent-yellow: #ffd700;
-    --light-blue: #f0f8ff;
+    --light-blue: #E3F3FA;
 }
 
 /* Header Styles */
@@ -41,6 +41,7 @@ header {
 
 .login-form {
     background: white;
+    color: black;
     padding: 2rem;
     border-radius: 8px;
     width: 300px;
@@ -144,7 +145,7 @@ header {
 
 /* Footer */
 footer {
-    background: #006400;
+    background: #2756A6;
     color: white;
     padding: 1rem;
     text-align: center;
@@ -156,9 +157,9 @@ footer {
 
 .social-links a {
     color: white;
-    margin: 0 0.5rem;
     text-decoration: none;
 }
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
