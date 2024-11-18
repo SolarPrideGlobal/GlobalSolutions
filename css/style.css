@@ -80,8 +80,13 @@ header img{
 .dashboard {
     background: var(--light-blue);
     padding: 2rem;
+    margin-top: 100px;
 }
-
+.dashboard h2, p{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
 .dashboard-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -142,6 +147,7 @@ header img{
 .chat-section {
     padding: 2rem;
     text-align: center;
+    margin: 100px 0 100px 0;
 }
 
 
