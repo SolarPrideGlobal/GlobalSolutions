@@ -64,5 +64,5 @@ Sustentabilidade acessível: Democratizar o uso de energia solar com foco em com
 Tecnologia para inclusão: Facilitar a transição energética com ferramentas práticas e intuitivas.
 Benefícios claros: Mostrar como a energia solar gera impacto financeiro e ambiental positivo.
 
-🚀 5. Releases
-<img src="https://github.com/SolarPrideGlobal/GlobalSolutions/blob/main/Solar%20Pride%20Releases.png" alt="Releases" width="300">
+🚀 5. Plano de Releases
+https://www.canva.com/design/DAGWL0wanuQ/E6dUn2_e4dMykGWQBstD7Q/edit
