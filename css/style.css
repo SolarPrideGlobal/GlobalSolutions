@@ -181,7 +181,8 @@ header img{
     margin-top: 50px;
 }
 .info-content img{
-    margin-left: 100px;
+    margin-left: 190px;
+    width: 300px;
 }
 .info-content button{
     height: 40px;
@@ -192,8 +193,7 @@ header img{
     background-color: #ffd700;    
     margin-left: 255px;
     font-size: large;
-    font-weight: 400;
-    
+
 }
 
 /*aside section */
